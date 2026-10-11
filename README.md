@@ -76,11 +76,11 @@ No skill bars here: what I can do is best judged from the repositories below.
 <table>
   <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/telegram-downloader-bot">View repository ↗</a>
 </td>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">View repository ↗</a>
 </td>
   </tr>
