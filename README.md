@@ -6,11 +6,11 @@
 
 <p>
   <samp>
-    building useful things, automating repetitive work, and learning by shipping.
+    building practical tools, automating repetitive work, and learning by shipping.
   </samp>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=FFFFFF&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bot+projects;Build.+Debug.+Improve." alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=FFFFFF&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bots+and+developer+tooling;Build.+Debug.+Ship." alt="Typing animation: interests cycle through AI-assisted development, backend and automation, Telegram bots, developer tooling, and building-debugging-shipping" />
 
 <p>
   <a href="https://github.com/KanekiDevPro">
@@ -33,92 +33,93 @@ Interests  : Telegram bots, Cloudflare Workers, developer tooling
 Mindset    : Understand the problem → build → test → improve
 ```
 
-I enjoy building practical software, exploring AI-assisted coding workflows, and turning repetitive tasks into reliable tools. I value readable code, careful debugging, and honest documentation over inflated claims.
+I build practical software — Telegram bots, backend tooling, and automation that
+turns repetitive work into reliable routines. I use AI-assisted development as a
+daily workflow: AI gets me productive faster, but debugging, verifying behaviour,
+and reading the actual code are still my job.
 
-- 🛠️ Working on backend tools, bot workflows, and automation.
-- 🤖 Using AI as a development assistant—not as a substitute for understanding or testing.
-- 🔍 Interested in debugging, code quality, security, and maintainable systems.
-- 🌱 Improving through hands-on projects and continuous learning.
+- 🛠️ **Backend & automation** — bot workflows, scripting, pipelines.
+- 🤖 **AI-assisted development** — faster iteration without skipping verification.
+- 🔍 **Debugging & code quality** — the failure path matters as much as the happy path.
+- 🌐 **Cloudflare & edge** — experiments with Workers and edge deployments.
+
+No skill bars here: what I can do is best judged from the repositories below.
 
 ---
 
 ## `$ cat current-stack.txt`
 
-> These are technologies and tools I work with or explore in my projects—not a claim of expert-level proficiency in every item.
+> Technologies that appear in my public repositories or are documented in my
+> project READMEs — this is a list of what I work with, not a claim of
+> expert-level proficiency in every item.
 
 <p>
+  <img src="https://img.shields.io/badge/Python-111111?style=flat-square&logo=python&logoColor=FFFFFF" alt="Python" />
   <img src="https://img.shields.io/badge/JavaScript-111111?style=flat-square&logo=javascript&logoColor=FFFFFF" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Cloudflare_Workers-111111?style=flat-square&logo=cloudflare&logoColor=FFFFFF" alt="Cloudflare Workers" />
-  <img src="https://img.shields.io/badge/Cloudflare_D1-111111?style=flat-square&logo=cloudflare&logoColor=FFFFFF" alt="Cloudflare D1" />
-  <img src="https://img.shields.io/badge/Telegram_Bots-111111?style=flat-square&logo=telegram&logoColor=FFFFFF" alt="Telegram bots" />
-  <img src="https://img.shields.io/badge/Git-111111?style=flat-square&logo=git&logoColor=FFFFFF" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-111111?style=flat-square&logo=github&logoColor=FFFFFF" alt="GitHub" />
-  <img src="https://img.shields.io/badge/AI_Coding_Workflows-111111?style=flat-square&logo=openai&logoColor=FFFFFF" alt="AI coding workflows" />
+  <img src="https://img.shields.io/badge/TypeScript-111111?style=flat-square&logo=typescript&logoColor=FFFFFF" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Shell-111111?style=flat-square&logo=gnu-bash&logoColor=FFFFFF" alt="Shell" />
+  <img src="https://img.shields.io/badge/Telegram_Bot_API-111111?style=flat-square&logo=telegram&logoColor=FFFFFF" alt="Telegram Bot API" />
+  <img src="https://img.shields.io/badge/Aiogram_3-111111?style=flat-square&logo=telegram&logoColor=FFFFFF" alt="Aiogram 3" />
+  <img src="https://img.shields.io/badge/PostgreSQL-111111?style=flat-square&logo=postgresql&logoColor=FFFFFF" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Redis-111111?style=flat-square&logo=redis&logoColor=FFFFFF" alt="Redis" />
+  <img src="https://img.shields.io/badge/yt_dlp-111111?style=flat-square&logo=youtubedl&logoColor=FFFFFF" alt="yt-dlp" />
+  <img src="https://img.shields.io/badge/Streamlit-111111?style=flat-square&logo=streamlit&logoColor=FFFFFF" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/Cloudflare-111111?style=flat-square&logo=cloudflare&logoColor=FFFFFF" alt="Cloudflare" />
+  <img src="https://img.shields.io/badge/Git_%7C_GitHub_Actions-111111?style=flat-square&logo=github&logoColor=FFFFFF" alt="Git and GitHub Actions" />
 </p>
-
-**Areas I focus on**
-- Backend logic and API integrations
-- Telegram bot commands, menus, and workflows
-- Cloudflare Workers and D1-backed applications
-- Debugging, testing, and code review
-- Automation and developer productivity
 
 ---
 
 ## `$ ls ./projects`
 
-<!-- EDIT: Replace the descriptions and placeholder links below with your real public repository URLs.
-     Remove any project you do not want to show publicly. -->
-
+<!-- FEATURED_PROJECTS:START -->
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>DNS Manager Worker</h3>
-      <p>Telegram-based DNS management tooling built around Cloudflare Workers and Cloudflare services.</p>
-      <p><code>JavaScript</code> <code>Cloudflare Workers</code> <code>D1</code> <code>Telegram Bot API</code></p>
-      <a href="https://github.com/KanekiDevPro/YOUR_DNS_REPOSITORY">View repository ↗</a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Server Management Platform</h3>
-      <p>A bot-focused project for server-management workflows, task handling, and data-backed features.</p>
-      <p><code>JavaScript</code> <code>Cloudflare Workers</code> <code>D1</code> <code>Testing</code></p>
-      <a href="https://github.com/KanekiDevPro/YOUR_SERVER_REPOSITORY">View repository ↗</a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>VPN Service Tooling</h3>
-      <p>Telegram service workflows and supporting tools for subscription and configuration management.</p>
-      <p><code>Telegram</code> <code>Automation</code> <code>Service Operations</code></p>
-      <a href="https://github.com/KanekiDevPro/YOUR_VPN_REPOSITORY">View repository ↗</a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>More projects</h3>
-      <p>Small experiments, utilities, and improvements built while learning and solving practical problems.</p>
-      <p><code>Experiments</code> <code>Developer Tools</code></p>
-      <a href="https://github.com/KanekiDevPro?tab=repositories">Browse repositories ↗</a>
-    </td>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
+&nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/telegram-downloader-bot">View repository ↗</a>
+</td>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
+&nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">View repository ↗</a>
+</td>
   </tr>
 </table>
+
+<sub>Generated from all public repositories owned by [@KanekiDevPro](https://github.com/KanekiDevPro). Forks, archived repos and the profile repo are excluded. Ranked by recency, description quality and community engagement — popularity is not a proxy for code quality.</sub>
+<!-- FEATURED_PROJECTS_GENERATED_BY update-projects.mjs -->
+<!-- FEATURED_PROJECTS:END -->
+
+<details>
+<summary>Browse all repositories ↗</summary>
+<br />
+
+[mirror-style forks](https://github.com/KanekiDevPro?tab=repositories&q=&type=fork) kept
+for upstream tracking and personal patches are intentionally excluded from the
+featured list above.
+
+</details>
 
 ---
 
 ## `$ git status`
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB&icon_color=FFFFFF&include_all_commits=true" alt="GitHub statistics" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB" alt="Most used languages" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB&icon_color=FFFFFF&include_all_commits=true" alt="GitHub statistics: commits, pull requests, and issues for KanekiDevPro" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB" alt="Most used languages across public repositories" />
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=BBBBBB&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=888888" alt="GitHub contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=BBBBBB&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=888888" alt="GitHub contribution streak for KanekiDevPro" />
 </div>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=KanekiDevPro&style=flat-square&color=111111&label=PROFILE+VIEWS" alt="Profile views counter" />
 </p>
 
-> Stats and counters are generated by third-party services and may be delayed, unavailable, or affected by their service limits. Language charts reflect repository contents, not a definitive measure of skill.
+> Stats and counters are generated by third-party services and may be delayed,
+> unavailable, or affected by their service limits. Language charts reflect
+> repository contents, not a definitive measure of skill.
 
 ---
 
@@ -128,9 +129,11 @@ I enjoy building practical software, exploring AI-assisted coding workflows, and
 #!/usr/bin/env bash
 echo "Understand before changing."
 echo "Test assumptions, not just the happy path."
+echo "Honest output beats confident output."
 echo "Keep secrets out of source control."
+echo "Use AI to accelerate, verify before shipping."
+echo "Automate what you would otherwise redo by hand."
 echo "Prefer maintainable solutions over clever hacks."
-echo "Use AI critically; verify the output."
 ```
 
 ---
@@ -140,7 +143,12 @@ echo "Use AI critically; verify the output."
 Open to learning, building, and collaborating on practical developer tools.
 
 - GitHub: [@KanekiDevPro](https://github.com/KanekiDevPro)
-- Email: `YOUR_PUBLIC_EMAIL` <!-- Optional: replace with a public contact email or remove this line. -->
+- Repositories: [all public repositories](https://github.com/KanekiDevPro?tab=repositories)
+
+<!-- Optional: add a public contact e-mail or website below, then remove this comment.
+Email: you@example.com
+Website: https://your-site.example
+-->
 
 ---
 
