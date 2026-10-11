@@ -10,7 +10,11 @@
   </samp>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=FFFFFF&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bots+and+developer+tooling;Build.+Debug.+Ship." alt="Typing animation: interests cycle through AI-assisted development, backend and automation, Telegram bots, developer tooling, and building-debugging-shipping" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=FFFFFF&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bots+and+developer+tooling;Build.+Debug.+Ship." />
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=1F2328&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bots+and+developer+tooling;Build.+Debug.+Ship." />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=900&color=1F2328&center=true&vCenter=true&width=650&lines=AI-assisted+development;Backend+and+automation;Telegram+bots+and+developer+tooling;Build.+Debug.+Ship." alt="Typing animation" />
+</picture>
 
 <p>
   <a href="https://github.com/KanekiDevPro">
@@ -76,11 +80,11 @@ No skill bars here: what I can do is best judged from the repositories below.
 <table>
   <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/telegram-downloader-bot">View repository ↗</a>
 </td>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">View repository ↗</a>
 </td>
   </tr>
@@ -94,6 +98,9 @@ No skill bars here: what I can do is best judged from the repositories below.
 <summary>Browse all repositories ↗</summary>
 <br />
 
+<!-- FEATURED_FORKS:START -->
+<!-- FEATURED_FORKS:END -->
+
 [mirror-style forks](https://github.com/KanekiDevPro?tab=repositories&q=&type=fork) kept
 for upstream tracking and personal patches are intentionally excluded from the
 featured list above.
@@ -105,12 +112,24 @@ featured list above.
 ## `$ git status`
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB&icon_color=FFFFFF&include_all_commits=true" alt="GitHub statistics: commits, pull requests, and issues for KanekiDevPro" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB" alt="Most used languages across public repositories" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB&icon_color=FFFFFF&include_all_commits=true" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=1F2328&text_color=57606A&icon_color=24292F&include_all_commits=true" />
+    <img height="165" src="https://github-readme-stats.vercel.app/api?username=KanekiDevPro&show_icons=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB&icon_color=FFFFFF&include_all_commits=true" alt="GitHub statistics: commits, pull requests, and issues" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=1F2328&text_color=57606A" />
+    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KanekiDevPro&layout=compact&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=BBBBBB" alt="Most used languages across public repositories" />
+  </picture>
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=BBBBBB&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=888888" alt="GitHub contribution streak for KanekiDevPro" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=BBBBBB&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=888888" />
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=1F2328&fire=1F2328&currStreakLabel=1F2328&sideLabels=8B949E&currStreakNum=1F2328&sideNums=1F2328&dates=8B949E" />
+    <img src="https://streak-stats.demolab.com?user=KanekiDevPro&hide_border=true&background=00000000&ring=FFFFFF&fire=FFFFFF&currStreakLabel=FFFFFF&sideLabels=BBBBBB&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=888888" alt="GitHub contribution streak" />
+  </picture>
 </div>
 
 <p align="center">
