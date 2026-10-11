@@ -4,21 +4,12 @@ name: Update profile featured projects
 #   <!-- FEATURED_PROJECTS:START --> and <!-- FEATURED_PROJECTS:END -->
 # in README.md, using scripts/update-projects.mjs.
 #
-# Committing is conditional (step "Commit and push"): if the generated section
-# matches what is already in README.md, the script reports "No changes" and the
-# workflow exits cleanly without creating an empty commit.
-#
-# Repository setting required (Settings → Actions → General → Workflow
-# permissions):
-#   * "Read and write permissions" must be selected, OR
-#   * keep the default (read-only) and the `permissions:` block below will
-#     still request contents: write per-run on repos that allow it.
-# If pushes are blocked, also check Settings → Actions → General →
-# "Allow GitHub Actions to create and approve pull requests" is not needed for
-# a direct push to the default branch, but branch protection on main must
-# either allow the github-actions bot to push or the workflow will fail.
-#
-# Required secret: none — the built-in GITHUB_TOKEN is used.
+# Requirements:
+#   - File `scripts/update-projects.mjs` must exist in this repo (preflight
+#     step fails with clear instructions if it does not).
+#   - Repo setting: Settings → Actions → General → Workflow permissions →
+#     "Read and write permissions" (needed for the push step).
+#   - No secrets required — the built-in GITHUB_TOKEN is used.
 
 on:
   workflow_dispatch:
@@ -28,11 +19,11 @@ on:
         required: false
         default: 'false'
   schedule:
-    # Weekly, Mondays 03:11 UTC. Chosen off the hour to reduce load spikes.
+    # Weekly, Mondays 03:11 UTC.
     - cron: '11 3 * * 1'
 
 permissions:
-  contents: write # the minimum needed to push the regenerated README.md
+  contents: write
 
 concurrency:
   group: update-profile-projects
@@ -44,49 +35,56 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          # checkout with a token that can push; the default GITHUB_TOKEN works
-          persist-credentials: true
+        uses: actions/checkout@v5
+
+      - name: Preflight — verify required files exist
+        run: |
+          missing=0
+          for f in scripts/update-projects.mjs README.md; do
+            if [ ! -f "$f" ]; then
+              echo "::error::Required file is missing: $f"
+              echo "  → Upload it to the ROOT of this repository, preserving the path."
+              echo "  → Current repository layout:"
+              find . -path ./.git -prune -o -type f -print | sed 's/^/      /'
+              missing=1
+            fi
+          done
+          if [ "$missing" = "1" ]; then
+            exit 1
+          fi
+          echo "Preflight OK: scripts/update-projects.mjs and README.md found."
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: '**/package.json'
+          node-version: '24'
 
       - name: Run featured-projects generator
         env:
-          # Built-in token raises the API rate limit from 60/h to 5,000/h for
-          # this run. It is passed via env, never echoed to logs.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: KanekiDevPro
-        run: |
-          if [ "${{ github.event.inputs.dry-run || 'false' }}" = "true" ]; then
-            node scripts/update-projects.mjs --dry-run --verbose
-          else
-            node scripts/update-projects.mjs --verbose
-          fi
+          DRY_RUN: ${{ github.event.inputs.dry-run || 'false' }}
+        run: node scripts/update-projects.mjs --verbose
 
       - name: Commit and push (only if changed)
         id: commit
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { execSync } = require('child_process');
-            const status = execSync('git status --porcelain README.md').toString().trim();
-            if (!status) {
-              console.log('README unchanged — nothing to commit.');
-              return;
-            }
-            execSync('git config user.name "github-actions[bot]"');
-            execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-            execSync('git add README.md');
-            execSync('git commit -m "chore(profile): refresh featured projects [skip ci]"');
-            execSync('git push origin HEAD:${{ github.ref_name }}');
-            console.log('Pushed updated README.md');
+        run: |
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            echo "Dry-run mode — skipping commit (as requested)."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "README unchanged — nothing to commit."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore(profile): refresh featured projects [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "committed=true" >> "$GITHUB_OUTPUT"
 
       - name: Job summary
         if: always()
@@ -94,7 +92,7 @@ jobs:
           {
             echo "## Featured projects update"
             echo ""
-            echo "- Result: ${{ steps.commit.outcome == 'success' && 'OK' || steps.commit.outcome }}"
-            echo "- Dry run: ${{ github.event.inputs.dry-run || 'false' }}"
+            echo "- Dry run: ${DRY_RUN:-false}"
+            echo "- Committed: ${{ steps.commit.outputs.committed != 'true' && 'no (unchanged or dry-run)' || 'yes' }}"
             echo "- Schedule: weekly (cron 11 3 * * 1)"
           } >> "$GITHUB_STEP_SUMMARY"
