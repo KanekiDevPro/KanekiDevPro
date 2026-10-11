@@ -80,18 +80,17 @@ No skill bars here: what I can do is best judged from the repositories below.
 <table>
   <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3> <p>Telegram bot for downloading and processing media files</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1791068880?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/telegram-downloader-bot">View repository ↗</a>
 </td>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![: Python](https://img.shields.io/badge/-Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
+<h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3> <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p> <p> ![Python](https://img.shields.io/badge/Python-3572A5) ![last push](https://img.shields.io/date/1789588477?color=777777&label=pushed) </p>
 &nbsp;&nbsp;<a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">View repository ↗</a>
 </td>
   </tr>
 </table>
 
 <sub>Generated from all public repositories owned by [@KanekiDevPro](https://github.com/KanekiDevPro). Forks, archived repos and the profile repo are excluded. Ranked by recency, description quality and community engagement — popularity is not a proxy for code quality.</sub>
-<!-- FEATURED_PROJECTS_GENERATED_BY update-projects.mjs -->
 <!-- FEATURED_PROJECTS:END -->
 
 <details>
@@ -99,6 +98,9 @@ No skill bars here: what I can do is best judged from the repositories below.
 <br />
 
 <!-- FEATURED_FORKS:START -->
+**Upstream parts I follow and patch for my own setups:**
+
+[BackPack](https://github.com/KanekiDevPro/BackPack) · [Linux-Optimizer-NEW](https://github.com/KanekiDevPro/Linux-Optimizer-NEW) · [3x-ui](https://github.com/KanekiDevPro/3x-ui) · [WUI](https://github.com/KanekiDevPro/WUI)
 <!-- FEATURED_FORKS:END -->
 
 [mirror-style forks](https://github.com/KanekiDevPro?tab=repositories&q=&type=fork) kept
