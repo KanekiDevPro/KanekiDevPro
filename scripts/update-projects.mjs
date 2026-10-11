@@ -44,13 +44,12 @@ const MARKER_END = '<!-- FEATURED_PROJECTS:END -->';
 
 const DEFAULT_LIMITS = {
   maxFeatured: 6,
-  maxForkCards: 4,
   minDaysSincePushToSuppressStale: 0,
 };
 
-const FORK_MARKERS = {
-  START: '<!-- FEATURED_FORKS:START -->',
-  END: '<!-- FEATURED_FORKS:END -->',
+const MARKERS = {
+  START: '<!-- FEATURED_PROJECTS:START -->',
+  END: '<!-- FEATURED_PROJECTS:END -->',
 };
 
 const WEIGHTS = {
@@ -307,20 +306,29 @@ function shield(label, value, color) {
   return `![${escapeMarkdown(alt)}](https://img.shields.io/badge/${slug}-${color})`;
 }
 
+/**
+ * Renders one project card. Uses ONLY plain text + links inside the <td> —
+ * GitHub does not process Markdown images inside raw HTML blocks, so shields
+ * badges rendered as raw `![..](..)` text must be avoided here.
+ */
 function renderRepoCard(repo) {
   const desc = escapeMarkdown(repo.description || 'No description provided.');
   const lang = repo.language || 'Misc';
-  const parts = [
-    `<h3><a href="${escapeMarkdown(repo.html_url)}">${escapeMarkdown(repo.name)}</a></h3>`,
-    `<p>${desc}</p>`,
-    '<p>',
-    shield('', lang, langColor(lang)),
-  ];
-  if (repo.stargazers_count > 0) parts.push(shield('stars', String(repo.stargazers_count), '777777'));
-  if (repo.forks_count > 0) parts.push(shield('forks', String(repo.forks_count), '777777'));
-  parts.push(`![last push](https://img.shields.io/date/${Math.floor(Date.parse(repo.pushed_at || repo.updated_at || 0) / 1000)}?color=777777&label=pushed)`);
-  parts.push('</p>');
-  return `<td width="50%" valign="top">\n${parts.join(' ')}\n&nbsp;&nbsp;<a href="${escapeMarkdown(repo.html_url)}">View repository ↗</a>\n</td>`;
+  const stats = [];
+  if (repo.stargazers_count > 0) stats.push(`★ ${repo.stargazers_count}`);
+  if (repo.forks_count > 0) stats.push(`⑂ ${repo.forks_count}`);
+  const pushed = formatDate(repo.pushed_at || repo.updated_at);
+  const statLine = [
+    `<code>${escapeMarkdown(lang)}</code>`,
+    stats.length ? stats.join(' · ') : '',
+    pushed ? `pushed ${pushed}` : '',
+  ].filter(Boolean).join(' · ');
+
+  return `<td width="50%" valign="top">
+<h3><a href="${escapeMarkdown(repo.html_url)}">${escapeMarkdown(repo.name)}</a></h3>
+<p>${desc}</p>
+<p><sub>${statLine}</sub></p>
+</td>`;
 }
 
 function renderProjects(picked) {
@@ -344,36 +352,6 @@ function renderProjects(picked) {
     '',
     `<sub>Generated from all public repositories owned by [@${USER}](${HTML_URL}). ` +
       'Forks, archived repos and the profile repo are excluded. Ranked by recency, description quality and community engagement — popularity is not a proxy for code quality.</sub>',
-    '',
-  ].join('\n');
-}
-
-/**
- * Renders a compact "upstream involvement" strip for the most recently pushed
- * public forks. Originals are never duplicated here (they are featured above).
- * Returns inline Markdown; empty string if nothing qualifies.
- */
-function renderForks(repos, { maxForkCards }, now = Date.now()) {
-  const forks = (Array.isArray(repos) ? repos : [])
-    .filter((r) => r.fork && !r.archived && !r.disabled && r.html_url && r.name)
-    .sort((a, b) => Date.parse(b.pushed_at || 0) - Date.parse(a.pushed_at || 0))
-    .slice(0, maxForkCards);
-
-  if (forks.length === 0) return '';
-
-  const items = forks.map((r) => {
-    const name = escapeMarkdown(r.name);
-    const upstream = (r.full_name || r.name).split('/')[0];
-    // Attribute upstream ONLY when the fork lives under a different owner (an
-    // org); same-owner forks get no redundant tag.
-    const tag = upstream && upstream !== USER ? ` \`${escapeMarkdown(upstream)}\`` : '';
-    return `[${name}](${escapeMarkdown(r.html_url)})${tag}`;
-  });
-
-  return [
-    '**Upstream parts I follow and patch for my own setups:**',
-    '',
-    items.join(' · '),
     '',
   ].join('\n');
 }
@@ -410,7 +388,7 @@ function replaceSection(readme, markers, generatedBody, sectionLabel) {
 /* ------------------------------------------------------------------ */
 
 async function main() {
-  log(`configuration: user=${USER} readme=${args.readme} dryRun=${args.dryRun} curatedTopic=${FEATURED_TOPIC} forkCards=${DEFAULT_LIMITS.maxForkCards}`);
+  log(`configuration: user=${USER} readme=${args.readme} dryRun=${args.dryRun} curatedTopic=${FEATURED_TOPIC}`);
 
   const readmeRaw = readFileSync(args.readme, 'utf8');
 
@@ -424,19 +402,12 @@ async function main() {
 
   const picked = rankRepos(repos, DEFAULT_LIMITS);
   const generated = renderProjects(picked);
-  const forksSection = renderForks(repos, DEFAULT_LIMITS);
   log('--- generated projects section ---');
   log(generated);
-  log('--- generated forks section ---');
-  log(forksSection || '(empty)');
-
-  const projectMarkers = { START: MARKER_START, END: MARKER_END };
-  const forkMarkers = FORK_MARKERS;
 
   let updated = readmeRaw;
   try {
-    updated = replaceSection(updated, projectMarkers, generated, 'Featured Projects');
-    updated = replaceSection(updated, forkMarkers, forksSection, 'Upstream Forks');
+    updated = replaceSection(updated, MARKERS, generated, 'Featured Projects');
   } catch (err) {
     console.error(`[FATAL] ${err.message}`);
     process.exit(err.exitCode ?? 3);
