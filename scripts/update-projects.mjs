@@ -58,8 +58,12 @@ const WEIGHTS = {
 /* CLI parsing                                                         */
 /* ------------------------------------------------------------------ */
 
-function parseArgs(argv) {
-  const args = { readme: 'README.md', dryRun: false, verbose: false };
+function parseArgs(argv, env = {}) {
+  const args = {
+    readme: 'README.md',
+    dryRun: env.DRY_RUN === 'true', // workflow sets this instead of interpolating CLI flags
+    verbose: false,
+  };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--readme') args.readme = argv[++i];
@@ -73,7 +77,7 @@ function parseArgs(argv) {
   return args;
 }
 
-const args = parseArgs(process.argv.slice(2));
+const args = parseArgs(process.argv.slice(2), process.env);
 const log = (...m) => { if (args.verbose) console.log(...m); };
 
 /* ------------------------------------------------------------------ */
