@@ -81,10 +81,17 @@ No skill bars here: what I can do is best judged from the repositories below.
 <table>
   <tr>
 <td width="50%" valign="top">
+<h3><a href="https://github.com/KanekiDevPro/temper">temper</a></h3>
+<p>Safe, reversible Linux server tuning for Ubuntu/Debian — scan, apply, verify, rollback. No telemetry.</p>
+<p><sub><code>Shell</code> · pushed 2026-10-18</sub></p>
+</td>
+<td width="50%" valign="top">
 <h3><a href="https://github.com/KanekiDevPro/telegram-downloader-bot">telegram-downloader-bot</a></h3>
 <p>Telegram bot for downloading and processing media files</p>
 <p><sub><code>Python</code> · pushed 2026-10-03</sub></p>
 </td>
+  </tr>
+  <tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/KanekiDevPro/Trade-Size-Calculator">Trade-Size-Calculator</a></h3>
 <p>Calculate position size, manage risk, and protect your trading capital with precision. Built for traders who don’t gamble.</p>
